@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>당신의 선택은?</title>
+  </head>
+  <body>
+    <h1>당신의 선택은?</h1>
+    <form action="/vote" method="post">
+      <p><button name="vote" value="Option A">100억 부자 변성환</button></p>
+      <p><button name="vote" value="Option B">무일푼 차은우</button></p>
+    </form>
+
+    <h2>현재 투표 결과</h2>
+    <p>100억 부자 변성환: {{ votes["Option A"] }} 표 ({{ percent_a }}%)</p>
+    <img
+      src="{{ url_for('static', filename='성환.jfif') }}"
+      alt="투표 이미지"
+      width="150px"
+    /><br />
+    <p>무일푼 차은우: {{ votes["Option B"] }} 표 ({{ percent_b }}%)</p>
+    <img
+      src="{{ url_for('static', filename='은우.jpg') }}"
+      alt="투표 이미지"
+      width="200px"
+    /><br />
+
+    <!-- 이미지 표시 -->
+  </body>
+</html>

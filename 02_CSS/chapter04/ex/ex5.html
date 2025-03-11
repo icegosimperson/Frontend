@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            box-sizing: content-box;
+            display: flex;
+        }
+        .content{
+            box-sizing : content-box;
+            width: 100px;
+            height:30px;
+            background-color: skyblue;
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .border{
+            box-sizing : content-box;
+            width: 100px;
+            height:30px;
+            background-color: orange;
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .start{
+            border-radius: 10px 0px 0px 10px;
+        }
+        .end{
+            border-radius:0px 10px 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class = "content start">1</div>
+        <div class = "border">2</div>
+        <div class = "content">3</div>
+        <div class = "border">4</div>
+        <div class = "content">5</div>
+        <div class = "border end">6</div>
+    </div>
+</body>
+</html>
