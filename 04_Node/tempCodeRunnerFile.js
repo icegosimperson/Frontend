@@ -1,0 +1,1 @@
+const { showAnimals } = require("./animals.js");
