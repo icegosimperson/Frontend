@@ -1,0 +1,13 @@
+<div id="app">
+   <div v-text="message"></div>
+</div>
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+    var model = { message: "<h2>Hello Vue3!</h2>" };
+    var vm = Vue.createApp({
+    name: "App",
+    data() {
+        return model;
+    },
+    }).mount("#app");
+</script>
