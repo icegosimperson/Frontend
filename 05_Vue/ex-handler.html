@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+<body>
+    <div id="app">
+    <h1>숫자 맞추기</h1>
+    <input type="number" v-model="inputNum" placeholder="숫자를 입력하세요" />
+        <button @click="checkAnswer">확인</button>
+        <h2>{{msg}}</h2>
+    </div>
+</body>
+    <script>
+        const vueApp = Vue.createApp({
+        name: 'App',
+        data() {
+            return {
+                random: parseInt(Math.random() * 10)+1,// 1~100 사이의 랜덤 숫자
+                inputNum: null, // 사용자가 입력한 숫자
+                msg: ""
+            }; // 결과 메시지
+        },
+        methods:{
+            checkAnswer(){
+                if(this.random > this.inputNum) return (this.msg = "Up");
+                if(this.random < this.inputNum) return (this.msg = "Down");
+
+                return (this.msg = "정답 입니다!");
+            }
+        }
+        }).mount('#app');
+    </script>
+</html>

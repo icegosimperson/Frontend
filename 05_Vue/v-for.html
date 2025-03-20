@@ -8,8 +8,12 @@
   </head>
   <body>
     <div id="app">
-      <h2>message </h2>
-      <h2>{{   message }}</h2>
+        <h1>폭싹 속았수다 등장인물</h1>
+        <ul>
+          <li v-for="(character, index) in foxacArr" v-bing:key="index">
+            배역 : {{character.casting}} / 배우 : {{character.actor}}
+          </li>
+        </ul>
     </div>
     </div>
     <script>
@@ -19,7 +23,12 @@
         name: 'App',
         data() {
           return {
-            message: 'Hello, vue world!',
+            foxacArr: [
+              {casting: '오애순', actor: '이지은'},
+              {casting: '양관식', actor: '박보검'},
+              {casting: '오애순', actor: '문소리'},
+              {casting: '양관식', actor: '박해준'},
+            ]
           };
         },
       }).mount('#app');

@@ -8,8 +8,11 @@
   </head>
   <body>
     <div id="app">
-      <h2>message </h2>
-      <h2>{{   message }}</h2>
+      <h1>오늘 행운의 정도는 :: {{luck }}</h1>
+      <h1 v-if="luck > 8">오늘은 행운의 날!!</h1>
+      <h1 v-else-if="luck > 5">오늘 운 좋은 날</h1>
+      <h1 v-else-if="luck" > 2 >평균적인 날</h1>
+      <h1 v-else="luck">아...</h1>
     </div>
     </div>
     <script>
@@ -19,7 +22,7 @@
         name: 'App',
         data() {
           return {
-            message: 'Hello, vue world!',
+           luck: parseInt(Math.random() * 10), // 0~9
           };
         },
       }).mount('#app');
