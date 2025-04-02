@@ -25,18 +25,27 @@ const router = createRouter({
       component: () => import('@/pages/UserPage.vue')
     },
     {
-      path: '/user/5(.*)*',
+      path: '/not-user-found',
       name: 'notuserfound',
-      component: () => {
-        return import ('@/pages/NotUserFound.vue');
-      }
+      component: () => import('@/pages/NotFound.vue'),
+    },
+
+    {
+      path: '/cors',
+      name: 'cors',
+      component: () => import('@/pages/CorsPage.vue'),
+    },
+    {
+      path:'/cors/ex',
+      name: 'cors-ex',
+      component: () => import('@/pages/CorsExPage.vue'),
     },
     {
       path:'/:pathMatch(.*)*',
       name: 'notfound',
       component:() =>{
-        return import('@/pages/NotFound.vue');
-      }
+        return import('@/pages/NotFound.vue')
+      },
     },
   ],
 })

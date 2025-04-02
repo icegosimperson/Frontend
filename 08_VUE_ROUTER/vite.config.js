@@ -15,4 +15,19 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target:
+          'https://port-0-tetz-night-back-m5yo5gmx92cc34bc.sel4.cloudtype.app',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },     
+    '/ex-api':{
+      target :  'https://port-0-tetz-night-back-m5yo5gmx92cc34bc.sel4.cloudtype.app/cors/ex',
+      changeOrigin: true,
+      rewrite: (path) => path.replace(/^\/ex-api/, ''),
+      }
+    }
+  }
 })
