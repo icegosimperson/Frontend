@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomePage from '../pages/HomePage.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomePage from '../pages/HomePage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,20 +18,32 @@ const router = createRouter({
       path: '/todo',
       name: 'todo',
       component: () => import('@/pages/todo/TodoPage.vue'),
-      meta: { requiresAuth: true}, 
+      meta: { requiresAuth: true },
     },
     {
       path: '/todo/detail/:id',
       name: 'todo/detail',
       component: () => import('@/pages/todo/TodoDetailPage.vue'),
-      meta: { requiresAuth: true}, 
+      meta: { requiresAuth: true },
       props: true,
     },
     {
       path: '/todo/write',
       name: 'todo/write',
       component: () => import('@/pages/todo/TodoWritePage.vue'),
-      meta: { requiresAuth: true}, 
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/todo/edit/:id',
+      name: 'todo/edit',
+      component: () => import('@/pages/todo/TodoEditPage.vue'),
+      meta: { requiresAuth: true },
+      props: true,
+    },
+    {
+      path: '/pinia',
+      name: 'pinia',
+      component: () => import('@/pages/pinia/PiniaPage.vue'),
     },
   ],
 });
@@ -43,7 +55,8 @@ router.beforeEach(function (to, from, next) {
       return next({ name: 'login' });
     }
   }
+
   next();
 });
 
-export default router
+export default router;

@@ -7,10 +7,10 @@
       "done": false
     },
     {
-      "id": "2",
-      "todo": "페이커 숭배하기",
+      "todo": "페이커 숭배하기1",
       "desc": "여러분 숭배할 시간입니다. 진짜 이번 우승 까지는 안바랍니다! ㅎㅎㅎㅎ",
-      "done": false
+      "done": true,
+      "id": "2"
     },
     {
       "id": "3",
@@ -28,12 +28,6 @@
       "id": "98ca",
       "todo": "",
       "desc": "",
-      "done": false
-    },
-    {
-      "id": "bd6a",
-      "todo": "22",
-      "desc": "11",
       "done": false
     }
   ],
